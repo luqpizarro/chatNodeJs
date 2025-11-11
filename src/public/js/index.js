@@ -8,7 +8,7 @@ let user = '';
 
 app.style.display = 'none'
 Swal.fire({
-    title: 'Quien chota sos?',
+    title: 'Quien sos?',
     input: 'text',
     text: 'Ingresa un nombre para identificarte',
     allowOutsideClick: false,
