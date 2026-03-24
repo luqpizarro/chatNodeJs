@@ -1,13 +1,60 @@
-<div>
-    <h1 id="welcome">Bienvenide al chat</h1>
-    <div>
-        <label for="box">Escribe tu mensaje aqui</label>
-        <input type="text" id="box" name="box">
+<div class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-gray-800 px-6 py-3 flex items-center justify-between border-b border-gray-700">
+        <h1 class="text-xl font-bold text-indigo-400">💬 ChatApp</h1>
+        <div class="flex items-center gap-4">
+            <span id="currentUsername" class="text-gray-300 text-sm"></span>
+            <button 
+                id="logoutBtn"
+                class="bg-gray-700 hover:bg-gray-600 text-sm px-3 py-1 rounded transition">
+                Logout
+            </button>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <div class="flex flex-1 overflow-hidden">
+
+        <!-- Sidebar with connected users -->
+        <aside class="w-56 bg-gray-800 border-r border-gray-700 flex flex-col p-4">
+            <h2 class="text-xs font-semibold text-gray-400 uppercase mb-3">Conectados</h2>
+            <div id="connectedUsers" class="flex flex-col gap-2"></div>
+        </aside>
+
+        <!-- Message area -->
+        <main class="flex-1 flex flex-col">
+
+            <!-- Message list -->
+            <div id="messages" class="flex-1 overflow-y-auto p-6 flex flex-col gap-3"></div>
+
+            <!-- Input -->
+            <div class="p-4 border-t border-gray-700 flex gap-3">
+                <input 
+                    id="messageInput"
+                    type="text"
+                    placeholder="Escribí un mensaje..."
+                    class="flex-1 bg-gray-700 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+                <button 
+                    id="sendBtn"
+                    class="bg-indigo-600 hover:bg-indigo-700 px-4 py-2 rounded transition">
+                    →
+                </button>
+            </div>
+
+        </main>
     </div>
-    <h2>CHAT:</h2>
-    <div id="app-chat"></div>
-    <h3>Usuarios Conectados:</h3>
-    <div id="connected-user"></div>
+</div>
+
+<!-- Search -->
+<div class="fixed bottom-6 right-6">
+    <input 
+        id="searchInput"
+        type="text"
+        placeholder="🔍 Buscar mensaje..."
+        class="bg-gray-700 rounded px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
 </div>
 <script src="/socket.io/socket.io.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
