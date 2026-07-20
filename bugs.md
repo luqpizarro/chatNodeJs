@@ -1,4 +1,4 @@
 Letras muy oscuras, poco contraste, no se entiende mucho
 
-Los botones de editar y borrar no funcionan
 
+cuando buscas por palabra no vuelve atras, tenes que mandar otro mensajea
